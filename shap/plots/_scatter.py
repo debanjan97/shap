@@ -562,7 +562,7 @@ def dependence_legacy(ind, shap_values=None, features=None, feature_names=None, 
 
         if show:
             pl.show()
-        return
+        return pl
 
     assert shap_values.shape[0] == features.shape[0], \
         "'shap_values' and 'features' values must have the same number of rows!"
@@ -720,3 +720,4 @@ def dependence_legacy(ind, shap_values=None, features=None, feature_names=None, 
         with warnings.catch_warnings(): # ignore expected matplotlib warnings
             warnings.simplefilter("ignore", RuntimeWarning)
             pl.show()
+    return pl

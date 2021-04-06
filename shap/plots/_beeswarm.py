@@ -584,7 +584,7 @@ def summary_legacy(shap_values, features=None, feature_names=None, max_display=N
         pl.subplots_adjust(hspace=0, wspace=0.1)
         if show:
             pl.show()
-        return
+        return pl
 
     if max_display is None:
         max_display = 20
@@ -888,3 +888,4 @@ def summary_legacy(shap_values, features=None, feature_names=None, max_display=N
         pl.xlabel(labels['VALUE'], fontsize=13)
     if show:
         pl.show()
+    return pl
