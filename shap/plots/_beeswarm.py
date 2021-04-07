@@ -506,6 +506,8 @@ def summary_legacy(shap_values, features=None, feature_names=None, max_display=N
 
     if use_log_scale:
         pl.xscale('symlog')
+    
+    mpl_fig = pl.figure(figsize=(1.5 * max_display + 1, 1 * max_display + 1))
 
     # plotting SHAP interaction values
     if not multi_class and len(shap_values.shape) == 3:
@@ -584,7 +586,7 @@ def summary_legacy(shap_values, features=None, feature_names=None, max_display=N
         pl.subplots_adjust(hspace=0, wspace=0.1)
         if show:
             pl.show()
-        return pl
+        return mpl_fig
 
     if max_display is None:
         max_display = 20
@@ -888,4 +890,4 @@ def summary_legacy(shap_values, features=None, feature_names=None, max_display=N
         pl.xlabel(labels['VALUE'], fontsize=13)
     if show:
         pl.show()
-    return pl
+    return mpl_fig
