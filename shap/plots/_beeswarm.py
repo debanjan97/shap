@@ -399,7 +399,7 @@ def is_color_map(color):
 
 # TODO: remove unused title argument / use title argument
 # TODO: Add support for hclustering based explanations where we sort the leaf order by magnitude and then show the dendrogram to the left
-def summary_legacy(shap_values, features=None, feature_names=None, max_display=None, plot_type=None,
+def summary_legacy(shap_values, features=None, feature_names=None, max_display=10, plot_type=None,
                  color=None, axis_color="#333333", title=None, alpha=1, show=True, sort=True,
                  color_bar=True, plot_size="auto", layered_violin_max_num_bins=20, class_names=None,
                  class_inds=None,
